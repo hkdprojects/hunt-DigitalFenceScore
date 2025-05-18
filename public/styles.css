@@ -36,7 +36,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .indicator-eye{
@@ -105,13 +105,13 @@ body {
     text-align: center;
     align-items: center;
     justify-content: center;
-    max-width: 800px 0;
+    max-width: 800px auto;
     margin: 55px 0px 30px 0px;
 }
 
 .search {
     display: flex;
-    width: 75%;
+    width: 70%;
     max-width: 600px 0;
     border-radius: 25px;
     padding: 3px;
@@ -154,7 +154,7 @@ body {
     font-family: "Hanken Grotesk", sans-serif;
     display: flex;
     flex-direction: row;
-    width: 85%;
+    width: 80%;
     max-width: 500px auto;
     height: 500px auto;
     gap: 10px;
@@ -296,14 +296,6 @@ body {
     color: hsl(224, 30%, 27%);
 }
 
-@media (max-width: 500px) {
-    .results-summary-container {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
 .btn {
     width: 100%;
     padding: 10px;
@@ -341,7 +333,7 @@ body {
     flex-direction: column;
     max-height: auto;
     max-width: 800px auto;
-    width: 85%;
+    width: 80%;
     font-size: 25px;
     color: white;
     padding: 20px;
@@ -354,33 +346,37 @@ body {
     width: 90%;
     margin: 20px 20px;
     font-size: 20px;
-
 }
 
 .detail-box
 {
-    margin: 10px 10px;
-    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 5px;
     width: 100%;
 }
-.keyPoints{
-    font-size: 20px auto;
+.keyPoints {
+    font-size: 17px;
+    white-space: normal;
     position: relative;
     border: 1px solid rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
     padding: 10px;
-    width: 95%;
-    max-width: 800px auto;
-    max-height: 40px;
-    margin: 10px auto;
+    width: 100%;
+    max-height: 300px auto;
+    height: auto;
+    margin: 5px;
     color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 3px;
 }
-
 .keyText{
-    margin: 0px 0px 0px 15px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    margin: 0px 0px 0px 20px;
 }
 
 /* descripton */
@@ -402,8 +398,9 @@ body {
 .description{
     margin: 30px 0px 0px 0px;
     font-size: 15px;
-    max-width: 350px;
+    max-width: 700px auto;
     word-wrap: 3px;
+    word-spacing: 2px;
     letter-spacing: 1px;
     
 }
@@ -509,4 +506,72 @@ body {
     font-size: 30px;
     color:rgb(253, 37, 37);
     background-color: rgba(255, 255, 255, 0.892);
+}
+
+@media (max-width: 800px) {
+    .search input[type="text"]{
+        width: 92%;
+    }
+    .results-summary-container,
+    .details,
+    .description-container{
+        width: 95%;
+    }
+}
+
+@media (max-width: 500px) {
+    .results-summary-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .search,.search input[type="text"]{
+        width: 90%;
+    }
+    .title{
+        font-size: 60px;
+        margin: 25px 0px 0px 0px;
+
+    }
+    .indicator{
+        width: 50px;
+        height: 50px;
+        margin: 20px 20px 0px 0px;
+        
+    }
+    .indicator-eye{
+        width: 7px;
+        height: 7px;
+    }
+    .expression-Bad,
+    .expression-notBad,
+    .expression-ok,
+    .expression-Good,
+    .expression-VeryGood,
+    .expression-normal{
+        height: 20px;
+        width: 20px;
+        margin: -12px 0px 0px 14px;
+    }
+    .detail-Inside{
+        font-size: 18px;
+    }
+    .details,
+    .description-container,
+    .heading-secondary{
+        font-size: 20px;
+    }
+    
+    .keyPoints{
+        font-size: 15px;
+    }
+    .disclaimer-heading{
+        font-size: 19px;
+    }
+    .results-summary-container,
+    .details,
+    .description-container{
+        width: 90%;
+    }
+    
 }
