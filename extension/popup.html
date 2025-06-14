@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SecureSurf</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>SecureSurf</h2>
+    <p><strong>URL:</strong> <span id="url"></span></p>
+    <p><strong>Trust Score:</strong> <span id="score">Loading...</span></p>
+    <div id="indicator"></div>
+
+    <h3>Threat Indicators</h3>
+    <ul>
+        <li>Phishing: <span id="phishing"></span></li>
+        <li>Scam: <span id="scam"></span></li>
+        <li>Spam: <span id="spam"></span></li>
+        <li>Malware: <span id="malware"></span></li>
+        <li>Safe Browsing: <span id="safeBrowsing"></span></li>
+    </ul>
+
+    <h3>Privacy Alerts</h3>
+    <ul id="privacyAlerts"></ul>
+
+    <h3>Password Generator</h3>
+    <button id="generatePwd">Generate Password</button>
+    <p id="password"></p>
+</body>
+<script src="popup.js"></script>
+
+</html>

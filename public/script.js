@@ -352,15 +352,17 @@ function checkSafetyAndAlert() {
         }
     }
     webscore_div.innerHTML = `${webscore}`;
-    if (webAge < 1 || domainId) {
-        if (webscore < 50) {
-            expression_div.classList.add("expression-Bad");
-            indicator_div.style.backgroundColor = "#ff1d1d";  //red
-            webscore_div.style.backgroundColor = "#ff1d1d";
-            declaration = `Not Safe`;
 
-            alert("This website is not safe to visit,low security score")
-        }
+    console.log(webAge);
+    console.log(domainId);
+    
+    if (webscore < 50) {
+        expression_div.classList.add("expression-Bad");
+        indicator_div.style.backgroundColor = "#ff1d1d";  //red
+        webscore_div.style.backgroundColor = "#ff1d1d";
+        declaration = `Not Safe`;
+
+        alert("This website is not safe to visit,low security score")
     }
 
     if (webscore >= 50 && webscore < 65) {
@@ -415,7 +417,7 @@ function createDisc() {
         <p>${description4}</p>
         <p>${description5}</p>
         <p>${description6}</p>`;
-    
+
     declaration_paragraph.innerHTML = `<p>${description7}</p>`
 }
 
@@ -431,9 +433,33 @@ async function getDetails(domain) {
     hideLoadingDiv();
 }
 
+
+//filter
+function extractDomain(url) {
+    try {
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            url = "https://" + url;
+        }
+
+        const parsedUrl = new URL(url);
+        let hostname = parsedUrl.hostname;
+
+        if (hostname.startsWith("www.")) {
+            hostname = hostname.replace("www.", "");
+        }
+
+        return hostname;
+    } catch (error) {
+        console.error("Invalid URL:", url);
+        return null;
+    }
+}
+
+
 //search function
 async function getResult(domain) {
     try {
+        domain = extractDomain(domain)
         console.log("Fetching data for domain:", domain); // Log the domain before fetch
         const response = await fetch(`/analyze?domain=${domain}`);
         const data = await response.json();

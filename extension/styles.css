@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 15px;
+    width: 300px;
+}
+
+.indicator {
+    width: 100%;
+    height: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+ul {
+    padding-left: 20px;
+}
