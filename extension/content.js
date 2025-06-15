@@ -31,14 +31,15 @@
         .then(res => res.json())
         .then(data => {
             const score = data.trustScore;
-            let message = `SecureSurf<br>
-            URL: ${domain}<br>
-            Scored: ${score}<br>
-            Phishing: ${data.phishing}<br>
-            Scam: ${data.scam}<br>
-            Spam: ${data.spam}<br>
-            Malware: ${data.malware}<br>
-            Safe Browsing: ${data.safe_Browsing}`;
+            let message = `SecureSurf<br><br>
+             ● URL: ${domain}<br>
+             ● Score: ${score}<br>
+             <br>
+             ● Phishing: ${data.phishing}<br>
+             ● Scam: ${data.scam}<br>
+             ● Spam: ${data.spam}<br>
+             ● Malware: ${data.malware}<br>
+             ● Safe Browsing: ${data.safe_Browsing}`;
 
             let color = "#d4edda";
             if (score <= 50) {

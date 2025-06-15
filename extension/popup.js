@@ -9,8 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = response.data;
         const score = data.trustScore;
         document.getElementById("score").textContent = score;
-        const color = score > 80 ? "green" : score > 50 ? "orange" : "red";
-        document.getElementById("indicator").style.backgroundColor = color;
+        const color = score > 80 ? "green" : score > 70 ? "greenyellow" : score > 60 ? "yellow" : score > 50 ? "orange" : "red"
+        const result = score > 80 ? "safe" : score > 70 ? "not Fully safe" : score > 60 ? "moderate safe" : score > 50 ? "not safe" : "not safe"
+        document.getElementById("indicator-background").style.backgroundColor = color;
+        document.getElementById("indicator").textContent = result;
+
 
         document.getElementById("phishing").textContent = data.phishing || "-";
         document.getElementById("scam").textContent = data.scam || "-";
