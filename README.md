@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+ HEAD
 # hunt-project
 after cloning the project goto vscode terminal
 run following command
@@ -6,10 +6,7 @@ run following command
 
 then goto offiial whois website and get API key
 also get virustotal API key
-after getting 
-  goto .env file
-    replace the API_KEY = your whois api key
-    
-=======
-# skull-project
->>>>>>> 24f2353 (uploading hunt project files)
+then create <.env> file and paste API keys 
+WHOIS_API_KEY = ....
+VIRUSTOTAL_API_KEY = .....
+PORT = 3000 OR YOUR WISH
